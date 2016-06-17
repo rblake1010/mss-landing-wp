@@ -1,0 +1,248 @@
+@import "css/bourbon/bourbon";
+@import "css/neat/neat";
+
+$section-width: 100%;
+$zone-wrapper-width: 100%;
+$zone-min-height: '';
+
+@mixin outer-container{
+  max-width:1200px;
+  margin:0 auto;
+}
+
+body{
+
+}
+
+.section{
+	width: $section-width;
+	.zone-wrapper{
+		padding: 1em 0;
+		width: $zone-wrapper-width;
+		.zone{
+		  @include outer-container;
+			min-height: $zone-min-height;      
+		}
+		.zone .region{ 
+      @include span-columns(12);
+      padding-right: rem(10px);
+      padding-left: rem(10px);
+		}
+	}
+}
+.align{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-weight:bold; 
+}
+
+/*.form-widget{
+  width:230px;
+  height:50px;  
+  background:red;
+  position:absolute;
+  top:20px;
+  right:0px;
+  cursor:pointer;
+  visibility:hidden;
+  display:flex;
+  img{
+    margin-right:10px;
+  }
+  .content{
+    flex:1;
+    font-size:13px;
+    align-self:center;
+  }
+}*/
+
+/*.form-slider{
+  width:230px;
+  height:367px;
+  background:lightyellow;
+  position:absolute;
+  top:70px;
+  right:0;
+  
+}*/
+
+.slide-nav{
+  position:fixed;
+  bottom:10px;
+  left:50%;
+  margin-left:-105px;
+  z-index:9999;
+  width:210px;
+  a{
+    display: block;
+    width: 128px;
+    height: 128px;
+    line-height: 40px;
+    color: red;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    float: left;
+    margin-right: 10px;
+    @include hide-text;
+    background: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-128.png");
+    cursor:pointer;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}
+
+header.section--header{
+  background:grey;
+  height:80px;
+  position:relative;
+  z-index:10;
+  .zone-wrapper-global-header{
+    .zone--global-header{
+      display:flex;
+     justify-content:space-between;
+      
+      .region--global-header-first{
+      justify-content:center;
+       align-items:center;        
+      }
+      .region--global-header-second{       
+        ul{
+          display:flex;
+         justify-content:flex-end;
+          li{
+            list-style-type:none;
+            margin:0px 20px;
+            a{
+              text-decoration:none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+section.section-hero{
+  .zone-wrapper--hero{
+    .zone-hero{
+      .region--hero{
+        @include span-columns(7);
+        color:#fff;        
+      }
+    }
+  }
+}
+
+section.section-one{
+  .zone-wrapper--one{
+    .zone-one{
+      .region--one-first{
+        @include span-columns(6);
+        background:black;
+        height: 500px
+      }
+    }
+  }
+}
+
+section.section-two{
+  .zone-wrapper--two{
+    .zone-two{
+      @include direction-context(right-to-left) {
+      .region--two-first{
+        @include span-columns(6);
+        background:black;
+        height: 500px
+        }
+      }
+    }
+  }
+}
+
+section.section-three{
+  .zone-wrapper--three{
+    .zone-three{      
+      .region--three-first{
+        @include span-columns(6);
+        background:black;
+        height: 500px     
+      }
+    }
+  }
+}
+
+section.section-four{
+  .zone-wrapper--four{
+    .zone-four{      
+      .region--four-first{
+        @include span-columns(6);
+        background:black;
+        height: 500px     
+      }
+    }
+  }
+}
+
+section.section-five{
+  .zone-wrapper--five{
+    .zone-five{      
+      .region--five-left{
+        @include span-columns(6);
+        background:black;
+        height: 500px     
+      }
+      .region--five-right{
+        @include span-columns(6);
+        background:black;
+        height: 500px     
+      }
+    }
+  }
+}
+
+section.section-last{
+  height:291px;
+  .zone-wrapper--last{
+    .zone-last{      
+      .region--footer-first{  
+      }
+      .region--footer-second{   
+      }
+    }
+  }
+}
+
+
+footer{
+  height:291px;
+  font-size:25px;
+}
+
+section{
+  height:100vh;
+  font-size:25px;
+   &.section-hero{
+    background:#008867;
+  }
+  &.section-one{
+    background:pink;
+  }
+  &.section-two{
+    background:honeydew;
+  }
+   &.section-three{
+    background:cornsilk;
+  }
+  &.section-four{
+    background:darkolivegreen;
+  }
+  &.section-five{
+    background:purple;
+  }
+  &.section-last{
+    background:lightGray;
+  }
+}
